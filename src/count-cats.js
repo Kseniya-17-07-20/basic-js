@@ -16,16 +16,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function countCats(matrix) {
 
-  let count = 0;
-  for(let i= 0; i<matrix.lenght;i++){
-    for (let j=0; j<matrix[i].lenght;j++){
-      if(matrix[i][j] == '^^'){
-        count++;
-      } else{
-      return 0;
-      }
-    }
-  }
+  return matrix.flat().filter(element=>element ==="^^").length;
 }
 module.exports = {
   countCats

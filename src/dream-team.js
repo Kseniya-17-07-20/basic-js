@@ -18,9 +18,10 @@ const { NotImplementedError } = require('../extensions/index.js');
 // ошибка
 //   9) should return false on wrong type
 function createDreamTeam(members) {
+  if(!(members instanceof Array)) return false;
   let arr =[];
   for (let i =0; i<members.length; i++){
-   
+    
     if(typeof(members[i])==='string'){
       members[i] = members[i].split(" ").join("");
       arr.push(members[i][0].toUpperCase())
